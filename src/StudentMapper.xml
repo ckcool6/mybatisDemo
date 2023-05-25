@@ -6,23 +6,23 @@
 <!--mapper:核心根标签-->
 <mapper namespace="StudentMapper">
     <!--查询标签-->
-    <select id="selectAll" resultType="com.it.bean.Student">
+    <select id="selectAll" resultType="student">
         select *
         from student
     </select>
 
-    <select id="selectById" resultType="com.it.bean.Student" parameterType="java.lang.Integer">
+    <select id="selectById" resultType="student" parameterType="java.lang.Integer">
         select *
         from student
         where id = #{id}
     </select>
 
-    <insert id="insert" parameterType="com.it.bean.Student">
+    <insert id="insert" parameterType="student">
         insert into student
         values (#{id}, #{name}, #{age})
     </insert>
 
-    <update id="update" parameterType="com.it.bean.Student">
+    <update id="update" parameterType="student">
         update student
         set name=#{name},
             age=#{age}
