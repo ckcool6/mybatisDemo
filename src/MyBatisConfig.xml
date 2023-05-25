@@ -4,6 +4,10 @@
 <configuration>
     <properties resource="jdbc.properties"/>
 
+    <settings>
+        <setting name="logImpl" value="log4j"/>
+    </settings>
+
     <typeAliases>
         <typeAlias type="com.it.bean.Student" alias="student"/>
     </typeAliases>

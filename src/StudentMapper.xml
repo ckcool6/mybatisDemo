@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--mapper:核心根标签-->
-<mapper namespace="StudentMapper">
+<mapper namespace="com.it.mapper.StudentMapper">
     <!--查询标签-->
     <select id="selectAll" resultType="student">
         select *
