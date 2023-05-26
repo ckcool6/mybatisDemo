@@ -5,10 +5,14 @@
 
 <!--mapper:核心根标签-->
 <mapper namespace="com.it.mapper.StudentMapper">
+
+    <sql id="select">
+        select * from student
+    </sql>
+
     <!--查询标签-->
     <select id="selectAll" resultType="student">
-        select *
-        from student
+        <include refid="select"/>
     </select>
 
     <select id="selectById" resultType="student" parameterType="java.lang.Integer">
@@ -32,5 +36,30 @@
     <delete id="delete" parameterType="java.lang.Integer">
         delete from student where id=#{id}
     </delete>
+
+    <select id="selectCondition" resultType="student" parameterType="student">
+        select *
+        from student
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+            <if test="age != null">
+                and age = #{age}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectByIds" resultType="student" parameterType="list">
+        select * from student
+        <where>
+            <foreach collection="list" open="id in (" close=")" item="id" separator=",">
+                #{id}
+            </foreach>
+        </where>
+    </select>
 
 </mapper>

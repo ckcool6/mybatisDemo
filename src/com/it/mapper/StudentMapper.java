@@ -18,4 +18,8 @@ public interface StudentMapper {
 
     //删除数据
     public abstract Integer delete(Integer id);
+
+    public abstract List<Student> selectCondition(Student stu);
+    public abstract List<Student> selectByIds(List<Integer> ids);
+
 }

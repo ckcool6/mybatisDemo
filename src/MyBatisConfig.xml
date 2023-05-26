@@ -12,6 +12,12 @@
         <typeAlias type="com.it.bean.Student" alias="student"/>
     </typeAliases>
 
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+
+        </plugin>
+    </plugins>
+
     <!--配置数据库环境-->
     <environments default="mysql">
 
